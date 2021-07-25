@@ -8,12 +8,12 @@ import { CreateUserDto } from './dto/create-user.dto';
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
-  async getAllUsers(): Promise<User[]> {
+  async getAll(): Promise<User[]> {
     const users = await this.userModel.find().exec();
     return users;
   }
 
-  async getUser(userID: string): Promise<User> {
+  async getOne(userID: string): Promise<User> {
     const user = await this.userModel.findById(userID).exec();
     return user;
   }
@@ -24,6 +24,7 @@ export class UsersService {
   }
 
   async update(userID: string, createUserDto: CreateUserDto): Promise<User> {
+    createUserDto.updatedAt = new Date();
     const updatedUser = await this.userModel.findByIdAndUpdate(
       userID,
       createUserDto,
