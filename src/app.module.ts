@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { CampaignsModule } from './campaigns/campaigns.module';
+import { AnnouncementsModule } from './announcements/announcements.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { CampaignsModule } from './campaigns/campaigns.module';
     UsersModule,
     RolesModule,
     CampaignsModule,
+    AnnouncementsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
