@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 @Schema()
-export class BlogPost {
+export class Campaign {
   @Prop({ required: true })
   authorID: string;
 
@@ -10,15 +10,18 @@ export class BlogPost {
   title: string;
 
   @Prop({ required: true })
-  body: string;
+  body: [];
 
   @Prop({ default: Date.now })
   createdAt: Date;
 
   @Prop({ default: Date.now })
   updatedAt: Date;
+
+  @Prop({ default: Date.parse('2999-12-31') })
+  destroyedAt: Date;
 }
 
-export type BlogPostDocument = BlogPost & Document;
+export type CampaignDocument = Campaign & Document;
 
-export const BlogPostSchema = SchemaFactory.createForClass(BlogPost);
+export const CampaignSchema = SchemaFactory.createForClass(Campaign);

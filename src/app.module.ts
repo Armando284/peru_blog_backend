@@ -4,18 +4,16 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
-import { PostsModule } from './posts/posts.module';
-import { AdsModule } from './ads/ads.module';
+import { CampaignsModule } from './campaigns/campaigns.module';
 
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost/peru-blog'),
     UsersModule,
     RolesModule,
-    PostsModule,
-    AdsModule,
+    CampaignsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
