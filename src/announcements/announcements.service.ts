@@ -11,7 +11,7 @@ import { AnnouncementDTO } from './dto/announcement-dto';
 export class AnnouncementsService {
   constructor(
     @InjectModel(Announcement.name)
-    private announcementModel: Model<AnnouncementDTO>,
+    private announcementModel: Model<AnnouncementDocument>,
   ) {}
 
   async getAll(): Promise<Announcement[]> {
