@@ -29,6 +29,4 @@ function MergeSort(arr: number[]): number[] {
   };
   return merge(MergeSort(left), MergeSort(right));
 }
-const startTime: Date = new Date();
 console.log('Ordenada por merge', MergeSort(filled));
-console.log('finalizado en :', `${(new Date() - startTime) / 1000} segundos`);
