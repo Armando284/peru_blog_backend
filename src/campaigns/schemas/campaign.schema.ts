@@ -10,7 +10,7 @@ export class Campaign {
   title: string;
 
   @Prop({ required: true })
-  body: [];
+  body: string;
 
   @Prop({ default: Date.now })
   createdAt: Date;
